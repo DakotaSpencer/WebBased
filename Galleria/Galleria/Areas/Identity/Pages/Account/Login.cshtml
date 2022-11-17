@@ -10,7 +10,6 @@
             <form id="account" style="text-align:center"  method="post">
                 <h2>Log In</h2>
                 <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div style="text-align:center" class="form-floating">
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                     <label asp-for="Input.Email" class="form-label"></label>
@@ -39,7 +38,9 @@
                 </div>
             </form>
         </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     </div>
+   
         
 
 
