@@ -4,9 +4,7 @@
     ViewData["Title"] = "Register";
 }
 
-
-<body class="row-cols-4">
-    <div id="test2">
+    <div class="authform">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
             <hr />
@@ -44,7 +42,7 @@
             
         </section>
     </div>
-</body>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
