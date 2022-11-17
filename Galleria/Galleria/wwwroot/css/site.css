@@ -16,3 +16,25 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#test {
+    width: 300px;
+    height: 500px;
+    padding: 50px;
+    background-color: lightgray;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#test2 {
+    width: 300px;
+    height: 500px;
+    padding: 50px;
+    background-color: lightgray;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+
