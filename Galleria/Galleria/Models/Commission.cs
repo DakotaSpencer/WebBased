@@ -17,6 +17,7 @@ namespace Galleria.Models
         [Column(TypeName = "varchar(500)")]
         public string ArtistName { get; set; } = "";
 
+        [Column(TypeName = "Date")]
         public DateTime DatePublished { get; set; }
 
         [Column(TypeName = "varchar(5000)")]
