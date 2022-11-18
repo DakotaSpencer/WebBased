@@ -47,5 +47,24 @@ namespace Galleria.Models
         {
 
         }
+
+        public User(int userId, string firstName, string lastName, string userName, string email, 
+            string password, string emailConfirmed, DateTime dateOfBirth, string? profilePictureLink, 
+            string? bio, string? twitter, string? instagram, string? tumblr)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Email = email;
+            Password = password;
+            EmailConfirmed = emailConfirmed;
+            DateOfBirth = dateOfBirth;
+            ProfilePictureLink = profilePictureLink;
+            Bio = bio;
+            Twitter = twitter;
+            Instagram = instagram;
+            Tumblr = tumblr;
+        }
     }
 }
