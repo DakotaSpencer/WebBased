@@ -32,5 +32,21 @@ namespace Galleria.Data
 
             return foundCommissions;
         }
+
+        public void AddCommission(Commission commission)
+        {
+            commission.CommissionId = 0;
+            db.Add(commission);
+            db.SaveChanges();
+        }
+
+        public void DeleteCommission(int? id)
+        {
+            if (id > 0)
+            {
+                db.Commissions.Remove(db.Commissions.Find(id));
+                db.SaveChanges();
+            }
+        }
     }
 }
