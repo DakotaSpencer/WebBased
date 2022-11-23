@@ -17,17 +17,6 @@ body {
   margin-bottom: 60px;
 }
 
-#test {
-    width: 300px;
-    height: 500px;
-    margin: auto;
-    padding: 50px;
-    background-color: lightgray;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 5px;
-}
-
 .authform {
     width: 300px;
     height: max-content;
@@ -39,4 +28,71 @@ body {
     border-radius: 5px;
 }
 
+.profile-top{
+    padding: 150px;
+}
 
+.bannerImageUploadSpot {
+    position: absolute;
+    color: brown;
+    top: 100px;
+    left: 119px;
+    border-radius: 8px;
+    background-color: lightgray;
+      width: 1300px;
+    height: 238px;
+}
+
+#banner-image {
+    border-radius: 8px;
+    position: absolute;
+    width: 1300px;
+    height: 238px;
+    top: 100px;
+    left: 119px;
+}
+
+.profileImageUploadSpot {
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    right: 20px;
+    color: brown;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+}
+
+
+#profile-image {
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    right: 20px;
+    color: brown;
+    width: 250px;
+    height: 250px;
+}
+
+.profile-information {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+    font-family: "Rockwell","Copperplate";
+    font-size: 30px;
+}
+
+div.gallery {
+    margin: 70px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+}
+
+div.gallery img {
+        width: 300px;
+        height: 200px;
+}

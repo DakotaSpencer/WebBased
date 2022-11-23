@@ -4,28 +4,85 @@
 @{
 }
 
+ <a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Views/Profile/_Commissions.cshtml">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="./PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="./Profile/ContactInformation.cshtml">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="./AboutMePartial">About</a>
+<div class="profile-top">
+    <input type="file" accept="image/gif, image/jpeg, img/png" id="file" onchange="loadBannerPic(event)" />
+      <p><label for="file" class="bannerImageUploadSpot">Upload Banner Image</label></p>
+      <p><img id="banner-image" /></p>
+     
+        <input type="file" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)"/>
+      <p><label for="file2" class="profileImageUploadSpot">Upload Profile Image</label></p>
+      <p><img id="profile-image" /></p>
+      
+</div>
+
 <div class="text-center">
-    <h1 class="display-4">Profile</h1>
-    <p>Below should be everything related to profile information</p>
-    <div class="container">
-        <div class="profile-header">
-            <div class="banner-image">
-                <p>Below should be the profile banner image</p>
-                <img src="" alt=""/>
-            </div>
-            <div class="profile-image">
-                <p>Below should be the profile picture image</p>
-                <img src="" alt=""/>
-            </div>
-        </div>
-        <div class="profile-information">
+     <div class="profile-information">
             <div>
                 <span>Username</span>
+                <p>Commissions and Artwork</p>
             </div>
+      </div>
+        <div class="gallery">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file3" onchange="loadCommissionPic(event)"/>
+            <p><label for="file3" class="ImageUploadSpot1">Upload Commission Image</label></p>
+            <p><img id="commission-image" width="800" height="600"/></p>
+            <div class="desc">Title</div>
         </div>
-        <div class="interchangable">
-            About Me, Commissions, Etc should go here and should be interchangable via button clicks
-            i.e. Button clicks which, when clicked load various partial Views containing the information needed
+        <div class="gallery">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file4" onchange="loadCommissionPic2(event)"/>
+            <p><label for="file4" class="ImageUploadSpot1">Upload Commission Image</label></p>
+            <p><img id="commission-image2" width="800" height="600"/></p>
+            <div class="desc">Title</div>
         </div>
-    </div>
+        <div class="gallery">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file5" onchange="loadCommissionPic3(event)"/>
+            <p><label for="file5" class="ImageUploadSpot1">Upload Commission Image</label></p>
+            <p><img id="commission-image3" width="800" height="600"/></p>
+            <div class="desc">Title</div>
+        </div>
+         <div class="gallery">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic4(event)"/>
+            <p><label for="file6" class="ImageUploadSpot1">Upload Commission Image</label></p>
+            <p><img id="commission-image4" width="800" height="600"/></p>
+            <div class="desc">Title</div>
+        </div>
+      
 </div>
+  <div>
+      <script>
+        var loadBannerPic = function(event) {
+        var image = document.getElementById('banner-image');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+        var loadProfilePic = function(event) {
+        var image = document.getElementById('profile-image');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+         var loadCommissionPic = function(event) {
+        var image = document.getElementById('commission-image');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+        var loadCommissionPic2 = function(event) {
+        var image = document.getElementById('commission-image2');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+        
+        var loadCommissionPic3 = function(event) {
+        var image = document.getElementById('commission-image3');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+            var loadCommissionPic4 = function(event) {
+        var image = document.getElementById('commission-image4');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+
+       </script>
+  </div>
+    
+
