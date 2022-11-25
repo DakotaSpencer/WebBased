@@ -8,5 +8,26 @@ namespace Galleria.Controllers
         {
             return View();
         }
+
+        public IActionResult _PricingInformation()
+        {
+            return View();
+        }
+
+        public IActionResult _ContactInformation()
+        {
+            return View();
+        }
+
+        public IActionResult _AboutMePartial()
+        {
+            return View();
+        }
+
+        public IActionResult _Commissions()
+        {
+            return View();
+        }
+
     }
 }

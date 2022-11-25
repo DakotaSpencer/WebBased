@@ -22,12 +22,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Profile (not yet completed)</a>
-                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Profile</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../Profile/Index">Commissions</a></li>
+                                    <li><a class="dropdown-item" href="../Profile/_PricingInformation">Pricing Info</a></li>
+                                    <li><a class="dropdown-item" href="../Profile/_AboutMePartial">About Me</a></li>
+                                    <li><a class="dropdown-item" href="../Profile/_ContactInformation">Contact Info</a></li>
+                              </ul>
+                            </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

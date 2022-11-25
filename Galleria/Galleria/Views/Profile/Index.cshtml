@@ -4,26 +4,30 @@
 @{
 }
 
- <a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Views/Profile/_Commissions.cshtml">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="./PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="./Profile/ContactInformation.cshtml">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="./AboutMePartial">About</a>
+ <a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Profile/Index">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="../Profile/_PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="../Profile/_ContactInformation">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="../Profile/_AboutMePartial">About</a>
 <div class="profile-top">
     <input type="file" accept="image/gif, image/jpeg, img/png" id="file" onchange="loadBannerPic(event)" />
-      <p><label for="file" class="bannerImageUploadSpot">Upload Banner Image</label></p>
+      <p><label for="file" class="bannerImageUploadSpotWord">Upload Banner Image</label></p>
+      <span class="bannerImageUploadSpot"></span>
       <p><img id="banner-image" /></p>
      
         <input type="file" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)"/>
-      <p><label for="file2" class="profileImageUploadSpot">Upload Profile Image</label></p>
+      <p><label for="file2" class="profileImageUploadSpotWord">Upload Profile Image</label></p>
+      <span class="profileImageUploadSpot"></span>
       <p><img id="profile-image" /></p>
       
 </div>
 
-<div class="text-center">
-     <div class="profile-information">
+        <div class="profile-information">
             <div>
                 <span>Username</span>
                 <p>Commissions and Artwork</p>
-            </div>
-      </div>
-        <div class="gallery">
+              </div>
+        </div>
+
+<div class="text-center">
+      <div class="ArtMuseum">
+           <div class="gallery">
             <input type="file" accept="image/gif, image/jpeg, img/png" id="file3" onchange="loadCommissionPic(event)"/>
             <p><label for="file3" class="ImageUploadSpot1">Upload Commission Image</label></p>
             <p><img id="commission-image" width="800" height="600"/></p>
@@ -47,6 +51,8 @@
             <p><img id="commission-image4" width="800" height="600"/></p>
             <div class="desc">Title</div>
         </div>
+      </div>
+
       
 </div>
   <div>

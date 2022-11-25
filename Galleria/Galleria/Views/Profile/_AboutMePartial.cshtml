@@ -3,7 +3,35 @@
 *@
 @{
 }
-<div>
+
+<a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Profile/Index">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="../Profile/_PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="../Profile/_ContactInformation">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="../Profile/_AboutMePartial">About</a>
+<div class="profile-top">
+    <input type="file" accept="image/gif, image/jpeg, img/png" id="file" onchange="loadBannerPic(event)" />
+      <p><label for="file" class="bannerImageUploadSpotWord">Upload Banner Image</label></p>
+      <span class="bannerImageUploadSpot"></span>
+      <p><img id="banner-image" /></p>
+     
+        <input type="file" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)"/>
+      <p><label for="file2" class="profileImageUploadSpotWord">Upload Profile Image</label></p>
+      <span class="profileImageUploadSpot"></span>
+      <p><img id="profile-image" /></p>
+      
+</div>
+<div class="text-center">
     <h1>About Me:</h1>
     <p>{about me information}</p>
 </div>
+
+       <div>
+      <script>
+        var loadBannerPic = function(event) {
+        var image = document.getElementById('banner-image');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+
+        var loadProfilePic = function(event) {
+        var image = document.getElementById('profile-image');
+        image.src = URL.createObjectURL(event.target.files[0])
+        };
+        </script>
+        </div>

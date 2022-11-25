@@ -39,6 +39,21 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "About Me Page",
+    pattern: "{ controller = Profile}/{ action = _AboutMePartial}/{ id ?}");
+app.MapControllerRoute(
+    name: " PricingInformation",
+    pattern: "{ controller = Profile}/{ action = _PricingInformation}/{ id ?}");
+app.MapControllerRoute(
+    name: " Contact Information",
+    pattern: "{ controller = Profile}/{ action = _ContactInformation}/{ id ?}");
+app.MapControllerRoute(
+    name: "Commissions",
+    pattern: "{ controller = Profile}/{ action = Index}/{ id ?}");
+
+
 app.MapRazorPages();
 
 app.Run();

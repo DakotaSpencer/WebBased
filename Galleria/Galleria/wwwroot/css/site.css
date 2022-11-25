@@ -1,6 +1,4 @@
-html {
-  font-size: 14px;
-}
+
 
 @media (min-width: 768px) {
   html {
@@ -9,12 +7,16 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    font-size: 14px;
+    min-height: 100%;
+    position:relative;
+    background: linear-gradient(90deg, rgba(204, 214, 235,1) 0%, rgba(163, 195, 217,1) 35%, rgba(174, 118, 166,1) 100%);
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, rgba(204, 214, 235,1) 0%, rgba(163, 195, 217,1) 35%, rgba(174, 118, 166,1) 100%);
+    border-block-end: 2px solid black;
 }
 
 .authform {
@@ -38,9 +40,17 @@ body {
     top: 100px;
     left: 119px;
     border-radius: 8px;
-    background-color: lightgray;
-      width: 1300px;
+    background-color: #D7DAE5;
+    width: 1300px;
     height: 238px;
+}
+
+.bannerImageUploadSpotWord {
+    position: absolute;
+    z-index: 9998;
+    color: brown;
+    top: 215px;
+    left: 685px;
 }
 
 #banner-image {
@@ -52,6 +62,15 @@ body {
     left: 119px;
 }
 
+
+.profileImageUploadSpotWord {
+    position: absolute;
+    z-index: 9997;
+    top: 310px;
+    left: 1155px;
+    right: 20px;
+}
+
 .profileImageUploadSpot {
     position: absolute;
     top: 200px;
@@ -59,7 +78,7 @@ body {
     right: 20px;
     color: brown;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #2DC2BD;
     border: 2px solid black;
     width: 250px;
     height: 250px;
@@ -78,7 +97,6 @@ body {
 }
 
 .profile-information {
-    position: absolute;
     top: 350px;
     left: 300px;
     font-family: "Rockwell","Copperplate";
@@ -90,9 +108,36 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 300px;
+    background-color: #D7DAE5;
 }
 
 div.gallery img {
         width: 300px;
         height: 200px;
+}
+
+.ArtMuseum {
+    padding-left:8rem;
+}
+
+.HomeArtMuseum {
+    padding-left: 10em;
+}
+#HomeText {
+    font-size: 50px;
+    font-family: Monaco;
+    text-shadow: 2px 2px 5px #DF367C;
+    color: #CFFCFF;
+}
+
+div.gallery2 img {
+    width: 400px;
+    height: 300px;
+}
+div.gallery2 {
+    margin: 65px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 400px;
+    background-color: #D7DAE5;
 }
