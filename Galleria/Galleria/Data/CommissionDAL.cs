@@ -77,6 +77,10 @@ namespace Galleria.Data
             }
         }
         
-
+        public void UpdateUser(User user)
+        {
+            db.Update(user);
+            db.SaveChanges();
+        }
     }
 }
