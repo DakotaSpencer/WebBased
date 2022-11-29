@@ -13,5 +13,11 @@ namespace Galleria.Interfaces
         void DeleteCommission(int? id);
 
         void GetCommission(int? id);
+
+        void AddUser(User user);
+
+        void DeleteUser(int? id);
+
+        void GetUser(int? id);
     }
 }

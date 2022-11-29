@@ -17,6 +17,12 @@ namespace Galleria.Data
             return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
+        public IEnumerable<Commission> GetCommissions()
+        {
+            db.SaveChanges();
+            return db.Commissions;
+        }
+
         public IEnumerable<Commission> Search (string strCommissionSearch)
         {
             List<Commission> foundCommissions = new List<Commission>();
@@ -48,5 +54,29 @@ namespace Galleria.Data
                 db.SaveChanges();
             }
         }
+
+        // --------- User DAL -------------
+
+        public User GetUser(int? id)
+        {
+            return db.Users.FirstOrDefault(user => user.UserId == id);
+        }
+
+        public void DeleteUser(int? id)
+        {
+            if(id > 0)
+            {
+                db.Users.Remove(db.Users.Find(id));
+                foreach (var commissions in db.Commissions)
+                {
+                    if(commissions.ArtistId == id)
+                    {
+                        db.Commissions.Remove(db.Commissions.Find(commissions.ArtistId));
+                    }
+                }
+            }
+        }
+        
+
     }
 }
