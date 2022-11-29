@@ -1,0 +1,47 @@
+﻿@page
+@model Galleria.Areas.Identity.Pages.Account.SettingsModel
+@{
+    ViewData["Title"] = "Account Settings";
+}
+<div class="authform">
+    <form id="updateForm" asp-route-returnUrl="" method="post">
+        <h2>Create a new account.</h2>
+        <hr />
+
+        <div class="form-floating">
+            <label>Email</label>
+            <input class="form-control" autocomplete="email" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-floating">
+            <label>Username</label>
+            <input class="form-control" autocomplete="username" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-floating">
+            <label>Password</label>
+            <input class="form-control" autocomplete="new-password" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-floating">
+            <label>Confirm Password</label>
+            <input class="form-control" autocomplete="new-password" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+    </form>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+</div>
+<div class="authform">
+    <h4>Below are options for account security</h4>
+    <form id="deleteform">
+        <p>Please confirm your password before deleting your account</p>
+        <div class="form-floating">
+            <label>Confirm Password</label>
+            <input class="form-control" autocomplete="new-password" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <button type="submit" class="w-100 btn btn-lg btn-primary"><span class="text-danger">Delete Account</span></button>
+    </form>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+</div>
