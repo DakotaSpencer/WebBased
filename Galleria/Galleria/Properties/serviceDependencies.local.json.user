@@ -4,10 +4,39 @@
       "restored": true,
       "restoreTime": "2022-11-17T00:31:14.7512602Z"
     },
+    "mssql3": {
+      "restored": true,
+      "restoreTime": "2022-11-29T20:35:26.6428534Z"
+    },
     "mssql1": {
       "restored": true,
       "restoreTime": "2022-11-15T05:07:20.435823Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-11-29T20:35:13.1985281Z"
     }
   },
-  "parameters": {}
+  "parameters": {
+    "mssql3.subscriptionId": {
+      "Name": "mssql3.subscriptionId",
+      "Type": "subscription",
+      "Value": "4356b8b1-b550-496e-8107-bd9bd50e308b"
+    },
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Galleria"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
+      "Type": "subscription",
+      "Value": "4356b8b1-b550-496e-8107-bd9bd50e308b"
+    },
+    "mssql3.resourceGroupName": {
+      "Name": "mssql3.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Galleria"
+    }
+  }
 }

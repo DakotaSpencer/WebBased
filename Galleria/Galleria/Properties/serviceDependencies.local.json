@@ -7,6 +7,19 @@
     "mssql2": {
       "type": "mssql.local",
       "connectionId": "ConnectionStrings:GalleriaContextConnection"
+    },
+    "secrets1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/GalleriaVault",
+      "type": "secrets.keyVault",
+      "connectionId": "VaultUri"
+    },
+    "mssql3": {
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/jerem/databases/Galleria",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:GalleriaSite",
+      "dynamicId": null
     }
   }
 }

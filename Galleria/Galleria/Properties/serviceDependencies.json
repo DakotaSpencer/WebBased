@@ -7,6 +7,15 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:GalleriaContextConnection"
+    },
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": "VaultUri"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:GalleriaSite",
+      "dynamicId": null
     }
   }
 }
