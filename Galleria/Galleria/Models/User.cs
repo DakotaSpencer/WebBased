@@ -8,19 +8,19 @@ namespace Galleria.Models
         [Required]
         public int UserId { get; set; }
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string FirstName { get; set; } = "";
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string LastName { get; set; } = "";
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string UserName { get; set; } = "";
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string Email { get; set; } = "";
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string Password { get; set; } = "";
 
         public string EmailConfirmed { get; set; } = "";

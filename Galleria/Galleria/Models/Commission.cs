@@ -14,7 +14,6 @@ namespace Galleria.Models
         [Required]
         public int ArtistId { get; set; }
 
-        [Column(TypeName = "varchar(50)")]
         public string ArtistName { get; set; } = "";
 
         [Column(TypeName = "Date")]
