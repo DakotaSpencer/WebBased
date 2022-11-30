@@ -13,6 +13,6 @@ namespace Galleria.Models
         public int CommissionId { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public Image 
+        public Image CommissionI { get; set; }
     }
 }
