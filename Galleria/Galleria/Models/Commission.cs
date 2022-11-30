@@ -8,19 +8,19 @@ namespace Galleria.Models
         [Required]
         public int CommissionId { get; set; }
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string CommissionName { get; set; } = "";
 
         [Required]
         public int ArtistId { get; set; }
 
-        [Column(TypeName = "varchar(500)")]
+        [Column(TypeName = "varchar(50)")]
         public string ArtistName { get; set; } = "";
 
         [Column(TypeName = "Date")]
         public DateTime DatePublished { get; set; }
 
-        [Column(TypeName = "varchar(5000)")]
+        [Column(TypeName = "varchar(4000)")]
         public string? Description { get; set; } = "";
 
         public Commission()
