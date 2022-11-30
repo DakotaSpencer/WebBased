@@ -1,0 +1,42 @@
+﻿@page
+@model Galleria.Areas.Identity.Pages.Commissions.EditCommissionModel
+@{
+}
+@{
+    /* Each option should take in something from a commission model or commission class, and update that in the database. */
+}
+
+<div class="commissionContainer">
+    <div class="commissionWrapper">
+        <form>
+            <div class="commissionHeader">
+                <label for="desc">Commisison Name</label>
+                <input type="text" placeholder="Commission Name"/>
+                <span>
+                    <label for="currency">Choose a currency:</label>
+
+                    <select name="currency" id="currency">
+                      <option value="usd">USD</option>
+                      <option value="euro">Euro</option>
+                      <option value="yen">Yen</option>
+                      <option value="pound">Pound</option>
+                    </select>
+                </span>
+                <label for="desc">Commisison Price</label>
+                <input type="number" placeholder="Commission Price" />
+            </div>
+            <div>
+                <label for="desc">Commisison Images</label>
+                <img alt="" src="{commissionIMGPreview}"/>@{/* Image should take in whatever is uploaded */}
+                <button action="uploadImages">Upload Image(s)</button>
+                <div>
+                    {Artist Name} @{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
+                </div>
+                <div>
+                    <label for="desc">Commisison Description</label>
+                    <input type="text" placeholder="Commission Description" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
