@@ -16,7 +16,7 @@ namespace Galleria.Models
 
         public string ArtistName { get; set; } = "";
 
-        [Column(TypeName = "Date")]
+        [Column(TypeName = "datetime")]
         public DateTime DatePublished { get; set; }
 
         [Column(TypeName = "varchar(4000)")]
@@ -25,15 +25,6 @@ namespace Galleria.Models
         public Commission()
         {
 
-        }
-
-        public Commission(int commissionId, string commissionName, int artistId, string artistName, DateTime datePublished)
-        {
-            CommissionId = commissionId;
-            CommissionName = commissionName;
-            ArtistId = artistId;
-            ArtistName = artistName;
-            DatePublished = datePublished;
         }
 
         public Commission(int commissionId, string commissionName, int artistId, string artistName, DateTime datePublished, string? description)
