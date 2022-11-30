@@ -28,10 +28,10 @@ namespace Galleria.Models
         [Column(TypeName = "Date")]
         public DateTime DateOfBirth { get; set; }
 
-        [Column(TypeName = "varchar(50000)")]
+        [Column(TypeName = "varchar(4000)")]
         public string? ProfilePictureLink { get; set; } = "";
 
-        [Column(TypeName = "varchar(5000)")]
+        [Column(TypeName = "varchar(4000)")]
         public string? Bio { get; set; } = "";
 
         [Column(TypeName = "varchar(500)")]
