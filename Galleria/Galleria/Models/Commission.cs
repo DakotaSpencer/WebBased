@@ -18,7 +18,7 @@ namespace Galleria.Models
         public string ArtistName { get; set; } = "";
 
         [Column(TypeName = "varbinary(MAX")]
-        public Image CommissionImage { get; set; }
+        public Image? CommissionImage { get; set; }
 
 
         [Column(TypeName = "datetime")]
@@ -32,7 +32,7 @@ namespace Galleria.Models
 
         }
 
-        public Commission(int commissionId, string commissionName, int artistId, string artistName, Image commissionImage, DateTime datePublished, string? description)
+        public Commission(int commissionId, string commissionName, int artistId, string artistName, Image? commissionImage, DateTime datePublished, string? description)
         {
             this.CommissionId = commissionId;
             this.CommissionName = commissionName;
