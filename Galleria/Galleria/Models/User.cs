@@ -28,8 +28,8 @@ namespace Galleria.Models
         [Column(TypeName = "Date")]
         public DateTime DateOfBirth { get; set; }
 
-        [Column(TypeName = "varchar(4000)")]
-        public string? ProfilePictureLink { get; set; } = "";
+        [Required]
+        public int UserProfilePictureId { get; set; }
 
         [Column(TypeName = "varchar(4000)")]
         public string? Bio { get; set; } = "";
@@ -49,22 +49,22 @@ namespace Galleria.Models
         }
 
         public User(int userId, string firstName, string lastName, string userName, string email, 
-            string password, string emailConfirmed, DateTime dateOfBirth, string? profilePictureLink, 
-            string? bio, string? twitter, string? instagram, string? tumblr)
+            string password, string emailConfirmed, DateTime dateOfBirth,
+            string? bio, string? twitter, string? instagram, string? tumblr, int userProfilePictureId)
         {
-            UserId = userId;
-            FirstName = firstName;
-            LastName = lastName;
-            UserName = userName;
-            Email = email;
-            Password = password;
-            EmailConfirmed = emailConfirmed;
-            DateOfBirth = dateOfBirth;
-            ProfilePictureLink = profilePictureLink;
-            Bio = bio;
-            Twitter = twitter;
-            Instagram = instagram;
-            Tumblr = tumblr;
+            this.UserId = userId;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.UserName = userName;
+            this.Email = email;
+            this.Password = password;
+            this.EmailConfirmed = emailConfirmed;
+            this.DateOfBirth = dateOfBirth;
+            this.Bio = bio;
+            this.Twitter = twitter;
+            this.Instagram = instagram;
+            this.Tumblr = tumblr;
+            this.UserProfilePictureId = userProfilePictureId;
         }
     }
 }

@@ -22,9 +22,9 @@ namespace Galleria.Models
 
         public UserProfilePicture(int userProfilePictureId, int userId, Image userProfilePictureImage)
         {
-            UserProfilePictureId = userProfilePictureId;
-            UserId = userId;
-            UserProfilePictureImage = userProfilePictureImage;
+            this.UserProfilePictureId = userProfilePictureId;
+            this.UserId = userId;
+            this.UserProfilePictureImage = userProfilePictureImage;
         }
     }
 }

@@ -16,6 +16,10 @@ namespace Galleria.Models
 
         public string ArtistName { get; set; } = "";
 
+        [Required]
+        public int CommissionImageId { get; set; }
+
+
         [Column(TypeName = "datetime")]
         public DateTime DatePublished { get; set; }
 
@@ -27,14 +31,15 @@ namespace Galleria.Models
 
         }
 
-        public Commission(int commissionId, string commissionName, int artistId, string artistName, DateTime datePublished, string? description)
+        public Commission(int commissionId, string commissionName, int artistId, string artistName, int commissionImageId, DateTime datePublished, string? description)
         {
-            CommissionId = commissionId;
-            CommissionName = commissionName;
-            ArtistId = artistId;
-            ArtistName = artistName;
-            DatePublished = datePublished;
-            Description = description;
+            this.CommissionId = commissionId;
+            this.CommissionName = commissionName;
+            this.ArtistId = artistId;
+            this.ArtistName = artistName;
+            this.CommissionImageId = commissionImageId;
+            this.DatePublished = datePublished;
+            this.Description = description;
         }
     }
 }

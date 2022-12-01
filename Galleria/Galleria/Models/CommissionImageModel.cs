@@ -22,9 +22,9 @@ namespace Galleria.Models
 
         public CommissionImageModel(int commissionImageId, int commissionId, Image commissionImage)
         {
-            CommissionImageId = commissionImageId;
-            CommissionId = commissionId;
-            CommissionImage = commissionImage;
+            this.CommissionImageId = commissionImageId;
+            this.CommissionId = commissionId;
+            this.CommissionImage = commissionImage;
         }
     }
 }
