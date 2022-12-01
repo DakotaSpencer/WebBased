@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 
 namespace Galleria.Models
 {
@@ -28,8 +29,8 @@ namespace Galleria.Models
         [Column(TypeName = "Date")]
         public DateTime DateOfBirth { get; set; }
 
-        [Required]
-        public int UserProfilePictureId { get; set; }
+        [Column(TypeName = "varbinary(MAX")]
+        public Image? UserProfilePicture { get; set; }
 
         [Column(TypeName = "varchar(4000)")]
         public string? Bio { get; set; } = "";
@@ -50,7 +51,7 @@ namespace Galleria.Models
 
         public User(int userId, string firstName, string lastName, string userName, string email, 
             string password, string emailConfirmed, DateTime dateOfBirth,
-            string? bio, string? twitter, string? instagram, string? tumblr, int userProfilePictureId)
+            string? bio, string? twitter, string? instagram, string? tumblr, Image? userProfilePicture)
         {
             this.UserId = userId;
             this.FirstName = firstName;
@@ -64,7 +65,7 @@ namespace Galleria.Models
             this.Twitter = twitter;
             this.Instagram = instagram;
             this.Tumblr = tumblr;
-            this.UserProfilePictureId = userProfilePictureId;
+            this.UserProfilePicture = userProfilePicture;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 
 namespace Galleria.Models
 {
@@ -16,8 +17,8 @@ namespace Galleria.Models
 
         public string ArtistName { get; set; } = "";
 
-        [Required]
-        public int CommissionImageId { get; set; }
+        [Column(TypeName = "varbinary(MAX")]
+        public Image CommissionImage { get; set; }
 
 
         [Column(TypeName = "datetime")]
@@ -31,13 +32,13 @@ namespace Galleria.Models
 
         }
 
-        public Commission(int commissionId, string commissionName, int artistId, string artistName, int commissionImageId, DateTime datePublished, string? description)
+        public Commission(int commissionId, string commissionName, int artistId, string artistName, Image commissionImage, DateTime datePublished, string? description)
         {
             this.CommissionId = commissionId;
             this.CommissionName = commissionName;
             this.ArtistId = artistId;
             this.ArtistName = artistName;
-            this.CommissionImageId = commissionImageId;
+            this.CommissionImage = commissionImage;
             this.DatePublished = datePublished;
             this.Description = description;
         }
