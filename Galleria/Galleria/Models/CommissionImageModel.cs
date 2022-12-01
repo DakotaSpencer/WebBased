@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Galleria.Models
 {
-    public class CommissionImage
+    public class CommissionImageModel
     {
         [Required]
         public int CommissionImageId { get; set; }
@@ -12,7 +12,19 @@ namespace Galleria.Models
         [Required]
         public int CommissionId { get; set; }
 
-        [Column(TypeName = "varbinary(MAX)")]
-        public Image CommissionI { get; set; }
+        [Column(TypeName = "varbinary(MAX)")] 
+        public Image CommissionImage { get; set; }
+
+        public CommissionImageModel()
+        {
+
+        }
+
+        public CommissionImageModel(int commissionImageId, int commissionId, Image commissionImage)
+        {
+            CommissionImageId = commissionImageId;
+            CommissionId = commissionId;
+            CommissionImage = commissionImage;
+        }
     }
 }
