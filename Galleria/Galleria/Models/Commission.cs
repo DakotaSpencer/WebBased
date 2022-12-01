@@ -19,8 +19,7 @@ namespace Galleria.Models
 
         [Column(TypeName = "varbinary(MAX")]
         public Image? CommissionImage { get; set; }
-
-
+        
         [Column(TypeName = "datetime")]
         public DateTime DatePublished { get; set; }
 
