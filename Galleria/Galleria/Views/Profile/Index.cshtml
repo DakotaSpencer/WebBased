@@ -21,6 +21,17 @@
         <div class="profile-information">
             <div>
                 <span>Username</span>
+                <div>Bio</div>
+                <p>Bio Information goes here</p>
+                <form id="bioForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    @{
+                        /*THIS SHOULD BE HIDDEN BY DEFAULT AND ONLY DISPLAY THE BUTTON IF THE USER IS LOGGED IN*/
+                    }
+                    <label>Update Bio</label>
+
+                    <input id="Bio" asp-for="User.Bio" class="form-control" autocomplete="username" aria-required="true"/>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" id="bioSubmit">Update</button>
+                </form>
                 <p>Commissions and Artwork</p>
               </div>
         </div>
