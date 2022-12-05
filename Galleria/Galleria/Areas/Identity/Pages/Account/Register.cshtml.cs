@@ -3,13 +3,16 @@
 #nullable disable
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using Azure.Core;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -42,40 +45,6 @@ public class RegisterModel : PageModel
         ILogger<RegisterModel> logger,
         IEmailSender emailSender)
     {
-<<<<<<< HEAD
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly IUserStore<IdentityUser> _userStore;
-        private readonly IUserEmailStore<IdentityUser> _emailStore;
-        private readonly IUserEmailStore<IdentityUser> ConfirmEmail;
-        private readonly UserManager<IdentityUser> _FirstName;
-        private readonly UserManager<IdentityUser> _LastName;
-        private readonly UserManager<IdentityUser> _Username;
-        private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
-
-        public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            IUserStore<IdentityUser> userStore,
-            SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> FirstName,
-            UserManager<IdentityUser> LastName,
-            UserManager<IdentityUser> Username,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
-        {
-            _userManager = userManager;
-            _userStore = userStore;
-            _FirstName = FirstName;
-            _LastName = LastName;
-            _Username = Username;
-            _emailStore = GetEmailStore();
-            ConfirmEmail = GetEmailStore();
-            _signInManager = signInManager;
-            _logger = logger;
-            _emailSender = emailSender;
-        }
-=======
         _userManager = userManager;
         _userStore = userStore;
         _FirstName = FirstName;
@@ -123,7 +92,6 @@ public class RegisterModel : PageModel
         /// [DataType(DataType.Text)]
         [Display(Name = "FirstName")]
         public string FirstName { get; set; }
->>>>>>> 93a96c81577f648c0ea781b0ad68a957a2f0b5fd
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -138,25 +106,16 @@ public class RegisterModel : PageModel
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-<<<<<<< HEAD
-        [DataType(DataType.Url)]
-        public string ReturnUrl { get; set; }
-=======
         ///
         [DataType(DataType.Text)]
         [Display(Name = "Username")]
         public string Username { get; set; }
->>>>>>> 93a96c81577f648c0ea781b0ad68a957a2f0b5fd
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         /// 
-<<<<<<< HEAD
-        
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
-=======
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -179,7 +138,6 @@ public class RegisterModel : PageModel
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
->>>>>>> 93a96c81577f648c0ea781b0ad68a957a2f0b5fd
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -187,7 +145,7 @@ public class RegisterModel : PageModel
         /// </summary>
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare(Password, ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -204,67 +162,11 @@ public class RegisterModel : PageModel
         ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         if (ModelState.IsValid)
         {
-<<<<<<< HEAD
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            /// [DataType(DataType.Text)]
-            [Display(Name = "FirstName")]
-            public string FirstName { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            /// 
-            [DataType(DataType.Text)]
-            [Display(Name = "LastName")]
-            public string LastName { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            ///
-            [DataType(DataType.Text)]
-            [Display(Name = "Username")]
-            public string Username { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            /// 
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
-            public string Email { get; set; }
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Confirm Email")]
-            [Compare("Email", ErrorMessage = "The email and confirmation email do not match.")]
-            public string ConfirmEmail { get; set; }
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Password)]
-            [Display(Name = "Password")]
-            public string Password { get; set; }
-=======
             var user = CreateUser();
 
             await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
             var result = await _userManager.CreateAsync(user, Input.Password);
->>>>>>> 93a96c81577f648c0ea781b0ad68a957a2f0b5fd
 
             if (result.Succeeded)
             {
