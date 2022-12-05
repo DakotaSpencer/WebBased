@@ -29,5 +29,15 @@ namespace Galleria.Controllers
             return View();
         }
 
+        public IActionResult CreateCommissions()
+        {
+            return View();
+        }
+
+        public IActionResult EditCommission()
+        {
+            return View();
+        }
+
     }
 }

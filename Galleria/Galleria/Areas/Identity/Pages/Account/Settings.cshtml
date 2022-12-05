@@ -3,10 +3,11 @@
 @{
     ViewData["Title"] = "Account Settings";
 }
+
+ <a class="Edit-CommissionPage"  style="position:relative; left:-10px; top:-10px;" href="../Profile/EditCommission">Edit Commissions</a> <a id="Create-CommissoinsPage" style="position:relative; left:40px; top:-10px;"href="../Profile/CreateCommissions">Create Commissions</a>
+
 <div class="authform">
     <form id="updateForm" asp-route-returnUrl="" method="post">
-        <h2>Create a new account.</h2>
-        <hr />
 
         <div class="form-floating">
             <label>Email</label>
@@ -24,12 +25,12 @@
             <span class="text-danger"></span>
         </div>
         <div class="form-floating">
-            <label>Password</label>
+            <label>UpdatePassword</label>
             <input class="form-control" autocomplete="new-password" aria-required="true" />
             <span class="text-danger"></span>
         </div>
         <div class="form-floating">
-            <label>Confirm Password</label>
+            <label>Confirm New Password</label>
             <input class="form-control" autocomplete="new-password" aria-required="true" />
             <span class="text-danger"></span>
         </div>

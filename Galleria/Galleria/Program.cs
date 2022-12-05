@@ -56,6 +56,16 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "Commissions",
     pattern: "{ controller = Profile}/{ action = Index}/{ id ?}");
+app.MapControllerRoute(
+    name: "CreateCommissions",
+    pattern: "{ controller = Profile}/{ action = CreateCommission}/{ id ?}");
+app.MapControllerRoute(
+    name: "EditCommissions",
+    pattern: "{ controller = Profile}/{ action = EditCommission}/{ id ?}");
+
+app.MapControllerRoute(
+    name: "Settings",
+    pattern: "{ controller = Account}/{ action = Settings}/{ id ?}");
 
 
 app.MapRazorPages();

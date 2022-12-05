@@ -10,7 +10,7 @@ namespace Galleria.Data
 
         }
 
-        public DbSet<Commission> Commissions { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<CommissionModel> Commissions { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }
