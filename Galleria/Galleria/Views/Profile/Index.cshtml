@@ -1,6 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿ @page
+@model Galleria.Models.CommissionModel
 @{
 }
 
@@ -18,32 +17,47 @@
       
 </div>
 
-        <div class="profile-information">
+       @*
+           <div class="profile-information">
             <div>
                 <span>Username</span>
+                <div>Bio</div>
+                <form id="bioForm"  asp-route-returnUrl="@UserModel.ReturnUrl"  method="post">
+                    @{
+                        /*THIS SHOULD BE HIDDEN BY DEFAULT AND ONLY DISPLAY THE BUTTON IF THE USER IS LOGGED IN*/
+                    }
+                    <label>Update Bio</label>
+
+                    <input id="Bio"  asp-for="@UserModel.Bio"  class="form-control" autocomplete="username" aria-required="true"/>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" id="bioSubmit">Update</button>
+                </form>
                 <p>Commissions and Artwork</p>
               </div>
         </div>
+       *@ 
 
 <div class="text-center">
       <div class="ArtMuseum">
            <div class="gallery">
-            <input type="file" accept="image/gif, image/jpeg, img/png" id="file3" onchange="loadCommissionPic(event)"/>
-            <p><label for="file3" class="ImageUploadSpot1">Upload Commission Image</label></p>
+               <h3 id="CommissionName">Commission Name </h3>
+            <h4 id="currency"><span>Commission Currency </span>Commission Price</h4>
             <p><img id="commission-image" width="800" height="600"/></p>
-            <div class="desc">Title</div>
+            <h3 id="ArtistName">Artist: </h3>
+            <h3 id="Description"></h3>
         </div>
         <div class="gallery">
-            <input type="file" accept="image/gif, image/jpeg, img/png" id="file4" onchange="loadCommissionPic2(event)"/>
-            <p><label for="file4" class="ImageUploadSpot1">Upload Commission Image</label></p>
-            <p><img id="commission-image2" width="800" height="600"/></p>
-            <div class="desc">Title</div>
+               <h3 id="CommissionName">Commission Name </h3>
+            <h4 id="currency"><span>Commission Currency </span>Commission Price</h4>
+            <p><img id="commission-image" width="800" height="600"/></p>
+            <h3 id="ArtistName">Artist: </h3>
+            <h3 id="Description"></h3>
         </div>
         <div class="gallery">
-            <input type="file" accept="image/gif, image/jpeg, img/png" id="file5" onchange="loadCommissionPic3(event)"/>
-            <p><label for="file5" class="ImageUploadSpot1">Upload Commission Image</label></p>
-            <p><img id="commission-image3" width="800" height="600"/></p>
-            <div class="desc">Title</div>
+               <h3 id="CommissionName">Commission Name </h3>
+            <h4 id="currency"><span>Commission Currency </span>Commission Price</h4>
+            <p><img id="commission-image" width="800" height="600"/></p>
+            <h3 id="ArtistName">Artist: </h3>
+            <h3 id="Description"></h3>
         </div>
          <div class="gallery">
             <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic4(event)"/>
@@ -64,21 +78,6 @@
 
         var loadProfilePic = function(event) {
         var image = document.getElementById('profile-image');
-        image.src = URL.createObjectURL(event.target.files[0])
-        };
-
-         var loadCommissionPic = function(event) {
-        var image = document.getElementById('commission-image');
-        image.src = URL.createObjectURL(event.target.files[0])
-        };
-
-        var loadCommissionPic2 = function(event) {
-        var image = document.getElementById('commission-image2');
-        image.src = URL.createObjectURL(event.target.files[0])
-        };
-        
-        var loadCommissionPic3 = function(event) {
-        var image = document.getElementById('commission-image3');
         image.src = URL.createObjectURL(event.target.files[0])
         };
 

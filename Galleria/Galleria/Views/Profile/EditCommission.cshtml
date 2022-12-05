@@ -1,18 +1,12 @@
-﻿@page
-@model Galleria.Areas.Identity.Pages.Commissions.EditCommissionModel
-@{
+﻿ @page
+@model Galleria.Models.CommissionModel
+@{/* Should take in information from the database and populate the fields for each commission */
 }
-@{
-    /* Each option should take in something from/for a commission model or commission class, and update that in the database. 
-     * Every field should be auto-populated based on what was in the commission's information
-     */
-}
-
 <div class="commissionContainer">
     <div class="commissionWrapper">
         <form>
             <div class="commissionHeader">
-                <label for="desc">Commisison Name</label>
+                <label for="desc">Commission Name</label>
                 <input type="text" placeholder="Commission Name"/>
                 <span>
                     <label for="currency">Choose a currency:</label>
@@ -24,18 +18,18 @@
                       <option value="pound">Pound</option>
                     </select>
                 </span>
-                <label for="desc">Commisison Price</label>
+                <label for="desc">Commission Price</label>
                 <input type="number" placeholder="Commission Price" />
             </div>
             <div>
-                <label for="desc">Commisison Images</label>
+                <label for="desc">Commission Images</label>
                 <img alt="" src="{commissionIMGPreview}"/>@{/* Image should take in whatever is uploaded */}
                 <button action="uploadImages">Upload Image(s)</button>
                 <div>
                     {Artist Name} @{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
                 </div>
                 <div>
-                    <label for="desc">Commisison Description</label>
+                    <label for="desc">Commission Description</label>
                     <input type="text" placeholder="Commission Description" />
                 </div>
             </div>

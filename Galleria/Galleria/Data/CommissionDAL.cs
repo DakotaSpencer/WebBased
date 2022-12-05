@@ -12,20 +12,20 @@ namespace Galleria.Data
             this.db = db;
         }
 
-        public Commission GetCommission(int? id)
+        public CommissionModel GetCommission(int? id)
         {
             return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
-        public IEnumerable<Commission> GetCommissions()
+        public IEnumerable<CommissionModel> GetCommissions()
         {
             db.SaveChanges();
             return db.Commissions;
         }
 
-        public IEnumerable<Commission> Search (string strCommissionSearch)
+        public IEnumerable<CommissionModel> Search (string strCommissionSearch)
         {
-            List<Commission> foundCommissions = new List<Commission>();
+            List<CommissionModel> foundCommissions = new List<CommissionModel>();
 
             foreach (var commission in db.Commissions)
             {
@@ -39,7 +39,7 @@ namespace Galleria.Data
             return foundCommissions;
         }
 
-        public void AddCommission(Commission commission)
+        public void AddCommission(CommissionModel commission)
         {
             commission.CommissionId = 0;
             db.Add(commission);
@@ -57,7 +57,7 @@ namespace Galleria.Data
 
         // --------- User DAL -------------
 
-        public User GetUser(int? id)
+        public UserModel GetUser(int? id)
         {
             return db.Users.FirstOrDefault(user => user.UserId == id);
         }
@@ -77,7 +77,7 @@ namespace Galleria.Data
             }
         }
         
-        public void UpdateUser(User user)
+        public void UpdateUser(UserModel user)
         {
             db.Update(user);
             db.SaveChanges();
