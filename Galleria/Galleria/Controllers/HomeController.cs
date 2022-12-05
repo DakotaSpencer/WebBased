@@ -1,6 +1,7 @@
 ﻿using Galleria.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Galleria.Interfaces;
 
 namespace Galleria.Controllers
 {
@@ -8,11 +9,7 @@ namespace Galleria.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        IDataAccessLayer dal;
         public IActionResult Index()
         {
             return View();
