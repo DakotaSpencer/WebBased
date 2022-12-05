@@ -15,7 +15,7 @@ namespace Galleria.Controllers
 
         public IActionResult PersonalCommissionGallery()
         {
-            return View("");
+            return View();
         }
     }
 }
