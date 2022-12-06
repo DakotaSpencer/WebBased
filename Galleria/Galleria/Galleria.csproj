@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="NewFolder\" />
+    <Folder Include="Pages\Commission\" />
   </ItemGroup>
 
 </Project>

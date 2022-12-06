@@ -13,9 +13,5 @@ namespace Galleria.Data
         public DbSet<CommissionModel> Commissions { get; set; }
         public DbSet<UserModel> Users { get; set; }
 
-        public static implicit operator CommissionContext(CommissionDAL v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

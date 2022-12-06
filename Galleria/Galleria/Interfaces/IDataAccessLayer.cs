@@ -12,7 +12,7 @@ namespace Galleria.Interfaces
 
         void DeleteCommission(int? id);
 
-        void GetCommission(int? id);
+        CommissionModel GetCommission(int? id);
 
         void AddUser(UserModel user);
 

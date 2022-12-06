@@ -11,7 +11,7 @@ namespace Galleria.Controllers
     {
         IDataAccessLayer dal;
 
-        public CommissionController(IDataAccessLayer dal, CommissionDAL db)
+        public CommissionController(IDataAccessLayer dal, CommissionContext db)
         {
             this.dal = dal;
 
@@ -22,17 +22,9 @@ namespace Galleria.Controllers
         }
 
 
-        [HttpGet]
         public IActionResult CommissionGallery()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                return View("CommissionGallery", dal.GetCommissions);
-            }
-            else
-            {
-                return View("Login");
-            }
+            return View("CommissionGallery",dal.GetCommissions);
         }
     }
 }

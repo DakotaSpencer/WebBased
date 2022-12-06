@@ -12,15 +12,14 @@ namespace Galleria.Data
             this.db = db;
         }
 
-        public void GetCommission(int? id)
+        public CommissionModel GetCommission(int? id)
         {
-            db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
+            return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
         public IEnumerable<CommissionModel> GetCommissions()
         {
-            db.SaveChanges();
-            return db.Commissions;
+            return db.Commissions.AsEnumerable();
         }
 
         public IEnumerable<CommissionModel> SearchCommissions (string strCommissionSearch)
