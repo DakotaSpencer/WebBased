@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Galleria.Models
 {
-    public class UserModel
+    public class User
     {
         [Required]
         public int UserId { get; set; }
@@ -24,8 +24,6 @@ namespace Galleria.Models
         [Column(TypeName = "varchar(50)")]
         public string Password { get; set; } = "";
 
-        public string EmailConfirmed { get; set; } = "";
-
         [Column(TypeName = "Date")]
         public DateTime DateOfBirth { get; set; }
 
@@ -44,12 +42,12 @@ namespace Galleria.Models
         [Column(TypeName = "varchar(500)")]
         public string? Tumblr { get; set; } = "";
 
-        public UserModel()
+        public User()
         {
 
         }
 
-        public UserModel(int userId, string firstName, string lastName, string userName, string email, 
+        public User(int userId, string firstName, string lastName, string userName, string email, 
             string password, string emailConfirmed, DateTime dateOfBirth,
             string? bio, string? twitter, string? instagram, string? tumblr, Image? userProfilePicture)
         {

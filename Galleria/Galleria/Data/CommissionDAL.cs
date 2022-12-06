@@ -12,24 +12,23 @@ namespace Galleria.Data
             this.db = db;
         }
 
-        public CommissionModel GetCommission(int? id)
+        public Commission GetCommission(int? id)
         {
             return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
-        public IEnumerable<CommissionModel> GetCommissions()
+        public IEnumerable<Commission> GetCommissions()
         {
             return db.Commissions.ToList();
         }
 
-        public IEnumerable<CommissionModel> SearchCommissions (string strCommissionSearch)
+        public IEnumerable<Commission> SearchCommissions (string strCommissionSearch)
         {
-            List<CommissionModel> foundCommissions = new List<CommissionModel>();
+            List<Commission> foundCommissions = new List<Commission>();
 
             foreach (var commission in db.Commissions)
             {
-                if (commission.ArtistName.ToUpper().Contains(strCommissionSearch.ToUpper()) ||
-                    commission.CommissionName.ToUpper().Contains(strCommissionSearch.ToUpper()))
+                if (commission.CommissionName.ToUpper().Contains(strCommissionSearch.ToUpper()))
                 {
                     foundCommissions.Add(commission);
                 }
@@ -38,7 +37,7 @@ namespace Galleria.Data
             return foundCommissions;
         }
 
-        public void AddCommission(CommissionModel commission)
+        public void AddCommission(Commission commission)
         {
             commission.CommissionId = 0;
             db.Add(commission);
