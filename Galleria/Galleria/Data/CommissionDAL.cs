@@ -3,18 +3,18 @@ using Galleria.Interfaces;
 
 namespace Galleria.Data
 {
-    public class CommissionDAL
+    public class CommissionDAL : IDataAccessLayer
     {
-        private CommissionContext db;
+        public CommissionContext db;
 
         public CommissionDAL(CommissionContext db)
         {
             this.db = db;
         }
 
-        public CommissionModel GetCommission(int? id)
+        public void GetCommission(int? id)
         {
-            return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
+            db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
         public IEnumerable<CommissionModel> GetCommissions()
@@ -23,7 +23,7 @@ namespace Galleria.Data
             return db.Commissions;
         }
 
-        public IEnumerable<CommissionModel> Search (string strCommissionSearch)
+        public IEnumerable<CommissionModel> SearchCommissions (string strCommissionSearch)
         {
             List<CommissionModel> foundCommissions = new List<CommissionModel>();
 
@@ -57,9 +57,9 @@ namespace Galleria.Data
 
         // --------- User DAL -------------
 
-        public UserModel GetUser(int? id)
+        public void GetUser(int? id)
         {
-            return db.Users.FirstOrDefault(user => user.UserId == id);
+            db.Users.FirstOrDefault(user => user.UserId == id);
         }
 
         public void DeleteUser(int? id)
@@ -81,6 +81,11 @@ namespace Galleria.Data
         {
             db.Update(user);
             db.SaveChanges();
+        }
+
+        public void AddUser(UserModel user)
+        {
+            throw new NotImplementedException();
         }
     }
 }
