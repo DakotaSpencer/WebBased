@@ -19,7 +19,7 @@ namespace Galleria.Data
 
         public IEnumerable<CommissionModel> GetCommissions()
         {
-            return db.Commissions.AsEnumerable();
+            return db.Commissions.ToList();
         }
 
         public IEnumerable<CommissionModel> SearchCommissions (string strCommissionSearch)

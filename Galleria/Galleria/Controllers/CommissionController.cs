@@ -24,7 +24,7 @@ namespace Galleria.Controllers
 
         public IActionResult CommissionGallery()
         {
-            return View("CommissionGallery",dal.GetCommissions);
+            return View("CommissionGallery",dal.GetCommissions());
         }
     }
 }

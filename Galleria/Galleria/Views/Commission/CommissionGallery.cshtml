@@ -1,4 +1,9 @@
-﻿<div class="HomeArtMuseum">
+﻿@model IEnumerable<CommissionModel>
+
+<div id="padding-bot"class="display-4 text-center info">
+    @Model.Count() game(s) found:
+</div>
+<div class="HomeArtMuseum">
 
     @foreach (CommissionModel commission in Model)
     {
