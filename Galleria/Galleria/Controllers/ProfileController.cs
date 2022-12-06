@@ -29,7 +29,7 @@ namespace Galleria.Controllers
             return View();
         }
 
-        public IActionResult CreateCommission()
+        public IActionResult CreateCommissions()
         {
             return View();
         }
@@ -39,10 +39,5 @@ namespace Galleria.Controllers
             return View();
         }
 
-        public IActionResult Settings()
-        {
-            return View();
-        }
     }
-        
 }

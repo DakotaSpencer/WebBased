@@ -65,7 +65,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "Settings",
-    pattern: "{ controller = Profile}/{ action = Settings}/{ id ?}");
+    pattern: "{ controller = Account}/{ action = Settings}/{ id ?}");
 
 
 app.MapRazorPages();
