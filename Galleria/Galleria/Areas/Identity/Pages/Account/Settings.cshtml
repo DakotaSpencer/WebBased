@@ -8,6 +8,11 @@
 
 <div class="authform">
     <form id="updateForm" asp-route-returnUrl="" method="post">
+        <div class="form-floating">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadProfilePic(event)" />
+            <p><label for="file6" class="ImageUploadSpot1">Upload Profile Image</label></p>
+            <p><img id="profile-image" width="600" height="600" /></p>
+        </div>
 
         <div class="form-floating">
             <label>Email</label>
