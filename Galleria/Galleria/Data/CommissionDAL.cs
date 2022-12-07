@@ -75,13 +75,13 @@ namespace Galleria.Data
             }
         }
         
-        public void UpdateUser(User user)
+        public void UpdateUser(Users user)
         {
             db.Update(user);
             db.SaveChanges();
         }
 
-        public void AddUser(User user)
+        public void AddUser(Users user)
         {
             throw new NotImplementedException();
         }

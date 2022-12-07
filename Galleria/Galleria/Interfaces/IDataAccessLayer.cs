@@ -14,7 +14,7 @@ namespace Galleria.Interfaces
 
         Commissions GetCommission(int? id);
 
-        void AddUser(User user);
+        void AddUser(Users user);
 
         void DeleteUser(int? id);
 

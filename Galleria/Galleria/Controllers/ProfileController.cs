@@ -1,9 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Galleria.Data;
+using Galleria.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Galleria.Controllers
 {
     public class ProfileController : Controller
     {
+
+        IDataAccessLayer dal;
+
+        public ProfileController(IDataAccessLayer dal, GalleriaContext db)
+        {
+            this.dal = dal;
+
+            if (dal.GetType() == typeof(CommissionDAL))
+            {
+                ((CommissionDAL)dal).db = db;
+            }
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -29,7 +44,7 @@ namespace Galleria.Controllers
             return View();
         }
 
-        public IActionResult CreateCommissions()
+        public IActionResult CreateCommission()
         {
             return View();
         }
