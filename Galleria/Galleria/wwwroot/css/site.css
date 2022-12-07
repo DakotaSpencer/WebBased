@@ -64,11 +64,10 @@ body {
 
 
 .profileImageUploadSpotWord {
-    position: absolute;
-    z-index: 9997;
-    top: 310px;
-    left: 1155px;
-    right: 20px;
+    position: relative;
+    top: 410px;
+    left: 1020px;
+    right: 80px;
 }
 
 .profileImageUploadSpot {
