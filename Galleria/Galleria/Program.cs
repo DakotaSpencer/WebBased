@@ -20,7 +20,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 //Dependency
-builder.Services.AddDbContext<CommissionContext>(
+builder.Services.AddDbContext<GalleriaContext>(
     options => options
         .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
