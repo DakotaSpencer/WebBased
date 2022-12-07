@@ -55,6 +55,11 @@ namespace Galleria.Data
 
         // --------- User DAL -------------
 
+        public IEnumerable<Users> GetUsers()
+        {
+            return db.Users.ToList();
+        }
+
         public void GetUser(int? id)
         {
             db.Users.FirstOrDefault(user => user.UserId == id);

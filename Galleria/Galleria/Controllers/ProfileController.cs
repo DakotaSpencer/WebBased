@@ -1,5 +1,6 @@
 ﻿using Galleria.Data;
 using Galleria.Interfaces;
+using Galleria.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Galleria.Controllers
@@ -17,6 +18,16 @@ namespace Galleria.Controllers
             {
                 ((CommissionDAL)dal).db = db;
             }
+        }
+
+        [HttpPost]
+        public IActionResult AddUser()
+        {
+            Users user;
+            int id = dal.GetUsers().Count() + 1;
+            user = new Users(id, Request.Form["FirstName"], Request.Form["LastName"], Request.Form["Username"],
+                Request.Form["Email"], Request.Form["Password"], "");
+            return View("_LoginPartial");
         }
 
         public IActionResult Index()

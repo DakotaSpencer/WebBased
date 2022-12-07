@@ -14,18 +14,32 @@ namespace Galleria.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string DateOfBirth { get; set; }
-        public byte[] UserProfilePicture { get; set; }
-        public string Bio { get; set; }
-        public string Twitter { get; set; }
-        public string Instagram { get; set; }
-        public string Tumblr { get; set; }
+        public byte[]? UserProfilePicture { get; set; }
+        public string? Bio { get; set; }
+        public string? Twitter { get; set; }
+        public string? Instagram { get; set; }
+        public string? Tumblr { get; set; }
 
         public Users()
         {
 
         }
 
-        public Users(int userId, string firstName, string lastName, string userName, string email, string password, string dateOfBirth, byte[] userProfilePicture, string bio, string twitter, string instagram, string tumblr)
+        public Users(int userId, string firstName, string lastName, string userName, string email,
+            string password, string dateOfBirth)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Email = email;
+            Password = password;
+            DateOfBirth = dateOfBirth;
+        }
+
+        public Users(int userId, string firstName, string lastName, string userName, string email, 
+            string password, string dateOfBirth, byte[]? userProfilePicture, string? bio, 
+            string? twitter, string? instagram, string? tumblr)
         {
             UserId = userId;
             FirstName = firstName;

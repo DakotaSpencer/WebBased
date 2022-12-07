@@ -19,5 +19,7 @@ namespace Galleria.Interfaces
         void DeleteUser(int? id);
 
         void GetUser(int? id);
+
+        public IEnumerable<Users> GetUsers();
     }
 }
