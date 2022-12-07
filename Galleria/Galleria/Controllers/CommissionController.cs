@@ -29,7 +29,7 @@ namespace Galleria.Controllers
 
         public IActionResult SearchCommissions()
         {
-            return View();
+            return View("CommissionGallery", dal.SearchCommissions(Request.Form["txtSearch"]));
         }
     }
 }
