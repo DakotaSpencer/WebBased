@@ -26,5 +26,10 @@ namespace Galleria.Controllers
         {
             return View("CommissionGallery",dal.GetCommissions());
         }
+
+        public IActionResult SearchCommissions()
+        {
+            return View();
+        }
     }
 }
