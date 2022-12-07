@@ -19,5 +19,26 @@ namespace Galleria.Models
         public string Twitter { get; set; }
         public string Instagram { get; set; }
         public string Tumblr { get; set; }
+
+        public Users()
+        {
+
+        }
+
+        public Users(int userId, string firstName, string lastName, string userName, string email, string password, string dateOfBirth, byte[] userProfilePicture, string bio, string twitter, string instagram, string tumblr)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Email = email;
+            Password = password;
+            DateOfBirth = dateOfBirth;
+            UserProfilePicture = userProfilePicture;
+            Bio = bio;
+            Twitter = twitter;
+            Instagram = instagram;
+            Tumblr = tumblr;
+        }
     }
 }
