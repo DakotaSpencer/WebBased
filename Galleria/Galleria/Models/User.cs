@@ -48,7 +48,7 @@ namespace Galleria.Models
         }
 
         public User(int userId, string firstName, string lastName, string userName, string email, 
-            string password, string emailConfirmed, DateTime dateOfBirth,
+            string password, DateTime dateOfBirth,
             string? bio, string? twitter, string? instagram, string? tumblr, Image? userProfilePicture)
         {
             this.UserId = userId;
@@ -57,7 +57,6 @@ namespace Galleria.Models
             this.UserName = userName;
             this.Email = email;
             this.Password = password;
-            this.EmailConfirmed = emailConfirmed;
             this.DateOfBirth = dateOfBirth;
             this.Bio = bio;
             this.Twitter = twitter;

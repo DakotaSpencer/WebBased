@@ -2,7 +2,7 @@
 {
     public class DbInitializer
     {
-        public static void Initialize(CommissionContext commissionContext, CommissionContext userContext)
+        public static void Initialize(GalleriaContext commissionContext, GalleriaContext userContext)
         {
             commissionContext.Database.EnsureCreated();
             userContext.Database.EnsureCreated();
@@ -11,15 +11,15 @@
             SetupUsers(userContext);
         }
 
-        public static void SetupCommissions(CommissionContext commissionContext)
+        public static void SetupCommissions(GalleriaContext context)
         {
-            if (commissionContext.Commissions.Any())
+            if (context.Commissions.Any())
             {
                 return;
             }
         }
 
-        public static void SetupUsers(CommissionContext userContext)
+        public static void SetupUsers(GalleriaContext userContext)
         {
             if (userContext.Users.Any())
             {

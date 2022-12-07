@@ -11,7 +11,7 @@ namespace Galleria.Controllers
     {
         IDataAccessLayer dal;
 
-        public CommissionController(IDataAccessLayer dal, CommissionContext db)
+        public CommissionController(IDataAccessLayer dal, GalleriaContext db)
         {
             this.dal = dal;
 

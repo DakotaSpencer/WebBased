@@ -5,26 +5,26 @@ namespace Galleria.Data
 {
     public class CommissionDAL : IDataAccessLayer
     {
-        public CommissionContext db;
+        public GalleriaContext db;
 
-        public CommissionDAL(CommissionContext db)
+        public CommissionDAL(GalleriaContext db)
         {
             this.db = db;
         }
 
-        public Commission GetCommission(int? id)
+        public Commissions GetCommission(int? id)
         {
             return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
-        public IEnumerable<Commission> GetCommissions()
+        public IEnumerable<Commissions> GetCommissions()
         {
             return db.Commissions.ToList();
         }
 
-        public IEnumerable<Commission> SearchCommissions (string strCommissionSearch)
+        public IEnumerable<Commissions> SearchCommissions (string strCommissionSearch)
         {
-            List<Commission> foundCommissions = new List<Commission>();
+            List<Commissions> foundCommissions = new List<Commissions>();
 
             foreach (var commission in db.Commissions)
             {
@@ -37,7 +37,7 @@ namespace Galleria.Data
             return foundCommissions;
         }
 
-        public void AddCommission(Commission commission)
+        public void AddCommission(Commissions commission)
         {
             commission.CommissionId = 0;
             db.Add(commission);
@@ -75,13 +75,13 @@ namespace Galleria.Data
             }
         }
         
-        public void UpdateUser(UserModel user)
+        public void UpdateUser(User user)
         {
             db.Update(user);
             db.SaveChanges();
         }
 
-        public void AddUser(UserModel user)
+        public void AddUser(User user)
         {
             throw new NotImplementedException();
         }
