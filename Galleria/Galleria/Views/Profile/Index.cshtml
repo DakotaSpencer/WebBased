@@ -4,38 +4,19 @@
 }
 
  <a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Profile/Index">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="../Profile/_PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="../Profile/_ContactInformation">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="../Profile/_AboutMePartial">About</a>
-<div class="profile-top">
-    <input type="file" accept="image/gif, image/jpeg, img/png" id="file" onchange="loadBannerPic(event)" />
-      <p><label for="file" class="bannerImageUploadSpotWord">Upload Banner Image</label></p>
-      <span class="bannerImageUploadSpot"></span>
-      <p><img id="banner-image" /></p>
-     
-        <input type="file" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)"/>
-      <p><label for="file2" class="profileImageUploadSpotWord">Upload Profile Image</label></p>
-      <span class="profileImageUploadSpot"></span>
-      <p><img id="profile-image" /></p>
-      
+<div>
+    <div>
+        <span class="profileImageUploadSpot"></span>
+       
+        <div class="profileImageUploadSpotWord">
+            Upload Profile Image
+        </div>
+        <input type="file" class="profileImageUploadSpotWord" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)" />
+        <p><img id="profile-image" /></p>
+    </div>
 </div>
 
-       @*
-           <div class="profile-information">
-            <div>
-                <span>Username</span>
-                <div>Bio</div>
-                <form id="bioForm"  asp-route-returnUrl="@UserModel.ReturnUrl"  method="post">
-                    @{
-                        /*THIS SHOULD BE HIDDEN BY DEFAULT AND ONLY DISPLAY THE BUTTON IF THE USER IS LOGGED IN*/
-                    }
-                    <label>Update Bio</label>
-
-                    <input id="Bio"  asp-for="@UserModel.Bio"  class="form-control" autocomplete="username" aria-required="true"/>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit" id="bioSubmit">Update</button>
-                </form>
-                <p>Commissions and Artwork</p>
-              </div>
-        </div>
-       *@ 
-
+       
 <div class="text-center">
       <div class="ArtMuseum">
            <div class="gallery">
