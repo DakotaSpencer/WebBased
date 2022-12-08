@@ -4,11 +4,11 @@
 }
 
 <div class="text-center">
-        <form>
-            <div class="commissionHeader">
-                <pre>
-                    <label for="desc">Commission Name</label><>
-                    <input type="text"  CommissionModel.   placeholder="Commission Name"/>
+        <form  method= "post">
+            <div  class="commissionHeader">
+            
+                    <label for="desc">Commission Name</label>
+                    <input type="text"  placeholder="Commission Name"/>
                     <span>
                     <label for="currency">Choose a currency:</label>
 
@@ -21,18 +21,20 @@
                      </span>
                      <label for="desc">Commission Price</label>
                     <input type="number" placeholder="Commission Price" />
-                </pre>
+ 
                 
             </div>
                     <div>
-                        <pre><input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic(event)"/>
+                        
+                            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic(event)"/>
                          <p><label for="file6" class="ImageUploadSpot1">Upload Commission Image</label></p>
                          <p><img id="commission-image" width="800" height="600"/></p>
-                         {Artist Name} @{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}<br />
-                         <br /><label for="desc">Commission Description</label><br />
-                         <input type="text" placeholder="Commission Description" />
-                        </pre>
-               
+                          @User.Identity?.Name@{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
+                    </div>
+                    <div>
+                        <label for="desc">Commission Description</label><br />
+                         <input type="text" placeholder="Description" />
+                         <input type="submit" />
                     </div>
         </form>
         <div>

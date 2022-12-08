@@ -40,27 +40,14 @@ body {
     top: 100px;
     left: 119px;
     border-radius: 8px;
-    background-color: #D7DAE5;
+    background-color: #dfe7fd;
     width: 1300px;
     height: 238px;
 }
 
-.bannerImageUploadSpotWord {
-    position: absolute;
-    z-index: 9998;
-    color: brown;
-    top: 215px;
-    left: 685px;
-}
 
-#banner-image {
-    border-radius: 8px;
-    position: absolute;
-    width: 1300px;
-    height: 238px;
-    top: 100px;
-    left: 119px;
-}
+
+
 
 
 .profileImageUploadSpotWord {

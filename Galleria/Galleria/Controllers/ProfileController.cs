@@ -1,13 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Galleria.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Galleria.Controllers
 {
     public class ProfileController : Controller
     {
+     
+
+    
         public IActionResult Index()
         {
             return View();
         }
+
 
         public IActionResult _PricingInformation()
         {
@@ -19,21 +24,25 @@ namespace Galleria.Controllers
             return View();
         }
 
+
         public IActionResult _AboutMePartial()
         {
             return View();
         }
+
 
         public IActionResult _Commissions()
         {
             return View();
         }
 
+
         public IActionResult CreateCommission()
         {
             return View();
         }
-
+        
+    
         public IActionResult EditCommission()
         {
             return View();

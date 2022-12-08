@@ -12,6 +12,7 @@ namespace Galleria.Models
         [Column(TypeName = "varchar(50)")]
         public string FirstName { get; set; } = "";
 
+
         [Column(TypeName = "varchar(50)")]
         public string LastName { get; set; } = "";
 
@@ -51,7 +52,7 @@ namespace Galleria.Models
 
         public UserModel(int userId, string firstName, string lastName, string userName, string email, 
             string password, string emailConfirmed, DateTime dateOfBirth,
-            string? bio, string? twitter, string? instagram, string? tumblr, Image? userProfilePicture)
+            string? bio, string? twitter, string? instagram, string? tumblr,Image? userProfilePicture)
         {
             this.UserId = userId;
             this.FirstName = firstName;
