@@ -18,8 +18,10 @@ namespace Galleria.Interfaces
 
         void DeleteUser(int? id);
 
-        void GetUser(int? id);
+        Users GetUser(int? id);
 
         public IEnumerable<Users> GetUsers();
+        public Users GetUserByEmailAndPassword(string email, string password);
+
     }
 }

@@ -10,7 +10,7 @@ namespace Galleria.Models
         public int CommissionId { get; set; }
         public string CommissionName { get; set; }
         public int ArtistId { get; set; }
-        public byte[] CommissionImage { get; set; }
+        public string CommissionImage { get; set; }
         public DateTime DatePublished { get; set; }
         public string Description { get; set; }
     }

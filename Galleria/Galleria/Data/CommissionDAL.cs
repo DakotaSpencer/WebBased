@@ -14,7 +14,9 @@ namespace Galleria.Data
 
         public Commissions GetCommission(int? id)
         {
-            return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
+            var commission = db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
+            if (commission == null) throw new KeyNotFoundException("Commission not found");
+            return commission;
         }
 
         public IEnumerable<Commissions> GetCommissions()
@@ -39,7 +41,7 @@ namespace Galleria.Data
 
         public void AddCommission(Commissions commission)
         {
-            commission.CommissionId = 0;
+            commission.CommissionId = db.Commissions.Count() + 1;
             db.Add(commission);
             db.SaveChanges();
         }
@@ -60,9 +62,11 @@ namespace Galleria.Data
             return db.Users.ToList();
         }
 
-        public void GetUser(int? id)
+        public Users GetUser(int? id)
         {
-            db.Users.FirstOrDefault(user => user.UserId == id);
+            var user = db.Users.FirstOrDefault(user => user.UserId == id);
+            if (user == null) throw new KeyNotFoundException("User not found");
+            return user;
         }
 
         public void DeleteUser(int? id)
@@ -90,6 +94,25 @@ namespace Galleria.Data
         {
             db.Users.Add(user);
             db.SaveChanges();
+        }
+
+        public Users GetUserByEmailAndPassword(string email, string password)
+        {
+            var foundUser = new Users();
+
+            foreach (var user in db.Users)
+            {
+                if (user.Email.ToUpper() == email && user.Password == password)
+                {
+                    foundUser = user;
+                }
+                else
+                {
+                    foundUser = null;
+                }
+            }
+
+            return foundUser;
         }
     }
 }
