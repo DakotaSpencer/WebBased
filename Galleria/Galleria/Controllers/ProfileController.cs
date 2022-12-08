@@ -27,7 +27,8 @@ namespace Galleria.Controllers
             int id = dal.GetUsers().Count() + 1;
             user = new Users(id, Request.Form["FirstName"], Request.Form["LastName"], Request.Form["Username"],
                 Request.Form["Email"], Request.Form["Password"], "");
-            return View("_LoginPartial");
+            dal.AddUser(user);
+            return View("Index");
         }
 
         public IActionResult Index()

@@ -82,13 +82,14 @@ namespace Galleria.Data
         
         public void UpdateUser(Users user)
         {
-            db.Update(user);
+            db.Users.Update(user);
             db.SaveChanges();
         }
 
         public void AddUser(Users user)
         {
-            throw new NotImplementedException();
+            db.Users.Add(user);
+            db.SaveChanges();
         }
     }
 }
