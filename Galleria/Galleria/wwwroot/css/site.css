@@ -47,83 +47,83 @@ body {
 
 
 
-
-
-
 .profileImageUploadSpotWord {
-    position: relative;
-    top: 410px;
-    left: 1020px;
-    right: 80px;
-}
-
-.profileImageUploadSpot {
     position: absolute;
-    top: 200px;
-    left: 1100px;
+    z-index: 9997;
+    top: 310px;
+    left: 1155px;
     right: 20px;
-    color: brown;
-    border-radius: 50%;
-    background-color: #2DC2BD;
-    border: 2px solid black;
-    width: 250px;
-    height: 250px;
 }
 
 
-#profile-image {
-    border-radius: 50%;
-    position: absolute;
-    top: 200px;
-    left: 1100px;
-    right: 20px;
-    color: brown;
-    width: 250px;
-    height: 250px;
-}
+        .profileImageUploadSpot {
+            position: absolute;
+            top: 200px;
+            left: 1100px;
+            right: 20px;
+            color: brown;
+            border-radius: 50%;
+            background-color: #2DC2BD;
+            border: 2px solid black;
+            width: 250px;
+            height: 250px;
+        }
 
-.profile-information {
-    top: 350px;
-    left: 300px;
-    font-family: "Rockwell","Copperplate";
-    font-size: 30px;
-}
+        #profile-image {
+            border-radius: 50%;
+            position: absolute;
+            top: 200px;
+            left: 1100px;
+            right: 20px;
+            color: brown;
+            width: 250px;
+            height: 250px;
+        }
 
-div.gallery {
-    margin: 70px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 300px;
-    background-color: #D7DAE5;
-}
+        .profile-information {
+            top: 350px;
+            left: 300px;
+            font-family: "Rockwell","Copperplate";
+            font-size: 30px;
+        }
 
-div.gallery img {
-        width: 300px;
-        height: 200px;
-}
+        div.gallery {
+            margin: 70px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 300px;
+            background-color: #D7DAE5;
+        }
 
-.ArtMuseum {
-    padding-left:8rem;
-}
+            div.gallery img {
+                width: 300px;
+                height: 200px;
+            }
 
-.HomeArtMuseum {
-    padding-left: 10em;
-}
-#HomeText {
-    font-size: 50px;
-    font-family: Monaco;
-    text-shadow: 2px 2px 5px #DF367C;
-    color: #CFFCFF;
-}
+        .ArtMuseum {
+            padding-left: 8rem;
+        }
 
-div.gallery2 img {
-    width: 400px;
-    height: 300px;
-}
-div.gallery2 {
-    margin: 65px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 400px;
-    background-color: #D7DAE5;
-}
+        .HomeArtMuseum {
+            padding-left: 10em;
+        }
+
+        #HomeText {
+            font-size: 50px;
+            font-family: Monaco;
+            text-shadow: 2px 2px 5px #DF367C;
+            color: #CFFCFF;
+        }
+
+        div.gallery2 img {
+            width: 400px;
+            height: 300px;
+        }
+
+        div.gallery2 {
+            margin: 65px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 400px;
+            background-color: #D7DAE5;
+        }
