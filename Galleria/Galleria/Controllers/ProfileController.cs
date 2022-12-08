@@ -1,6 +1,7 @@
 ﻿using Galleria.Data;
 using Galleria.Interfaces;
 using Galleria.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Galleria.Controllers
@@ -9,10 +10,12 @@ namespace Galleria.Controllers
     {
 
         IDataAccessLayer dal;
+        UserManager<IdentityUser> userManager;
 
-        public ProfileController(IDataAccessLayer dal, GalleriaContext db)
+        public ProfileController(IDataAccessLayer dal, GalleriaContext db, UserManager<IdentityUser> userManager)
         {
             this.dal = dal;
+            this.userManager = userManager;
 
             if (dal.GetType() == typeof(CommissionDAL))
             {
@@ -28,12 +31,8 @@ namespace Galleria.Controllers
             user = new Users(id, Request.Form["FirstName"], Request.Form["LastName"], Request.Form["Username"],
                 Request.Form["Email"], Request.Form["Password"], "");
             dal.AddUser(user);
-            return View("Index");
-        }
 
-        public IActionResult Index()
-        {
-            return View();
+            return View("Index");
         }
 
         public IActionResult _PricingInformation()
