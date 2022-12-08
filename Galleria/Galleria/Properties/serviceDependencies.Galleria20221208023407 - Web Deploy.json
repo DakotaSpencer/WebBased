@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql3": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/jerem/databases/Galleria",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:GalleriaSite",
+      "dynamicId": null
+    }
+  }
+}
