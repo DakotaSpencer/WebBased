@@ -3,13 +3,15 @@
 @{/* Should take in information from the database and populate the fields for each commission */
 }
 
-<div class="commissionContainer">
-    <div class="commissionWrapper">
-        <form>
-            <div class="commissionHeader">
-                <label for="desc">Commisison Name</label>
-                <input type="text" placeholder="Commission Name"/>
-                <span>
+<div class="text-center">
+        <form  method= "post">
+            <div  class="commissionHeader">
+            
+                    <label for="desc">Commission Name</label>
+                    <input type="text"  placeholder="Commission Name"/>
+                    <span>
+
+
                     <label for="currency">Choose a currency:</label>
 
                     <select name="currency" id="currency">
@@ -18,22 +20,29 @@
                       <option value="yen">Yen</option>
                       <option value="pound">Pound</option>
                     </select>
-                </span>
-                <label for="desc">Commisison Price</label>
-                <input type="number" placeholder="Commission Price" />
+
+                     </span>
+                     <label for="desc">Commission Price</label>
+                    <input type="number" placeholder="Commission Price" />
+ 
+                
             </div>
-            <div>
-                <label for="desc">Commisison Images</label>
-                <img alt="" src="{commissionIMGPreview}"/>@{/* Image should take in whatever is uploaded */}
-                <button action="uploadImages">Upload Image(s)</button>
-                <div>
-                    {Artist Name} @{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
-                </div>
-                <div>
-                    <label for="desc">Commisison Description</label>
-                    <input type="text" placeholder="Commission Description" />
-                </div>
-            </div>
+                    <div>
+                        
+                            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic(event)"/>
+                         <p><label for="file6" class="ImageUploadSpot1">Upload Commission Image</label></p>
+                         <p><img id="commission-image" width="800" height="600"/></p>
+                          @User.Identity?.Name@{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
+                    </div>
+                    <div>
+                        <label for="desc">Commission Description</label><br />
+                         <input type="text" placeholder="Description" />
+                         <input type="submit" />
+                    </div>
+
+               
+         
+
         </form>
-    </div>
+  
 </div>

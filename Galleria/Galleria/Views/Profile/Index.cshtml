@@ -4,6 +4,16 @@
 }
 
  <a class="Commissions-page"  style="position:relative; left:-10px; top:-10px;" href="../Profile/Index">Commissions</a> <a id="Pricing-page" style="position:relative; left:40px; top:-10px;"href="../Profile/_PricingInformation">Pricing</a> <a id="Contact-page" style="position:relative; left:110px; top:-10px;" href="../Profile/_ContactInformation">Contact</a> <a class="About-page" style="position:relative; left:180px; top:-10px;" href="../Profile/_AboutMePartial">About</a>
+<<<<<<< HEAD
+<div class="profile-top">
+     <span class="bannerImageUploadSpot"></span>
+
+        <input type="file" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)"/>
+      <p><label for="file2" class="profileImageUploadSpotWord">Upload Profile Image</label></p>
+      <span class="profileImageUploadSpot"></span>
+      <p><img id="profile-image" /></p>
+      
+
 <div>
     <div>
         <span class="profileImageUploadSpot"></span>
@@ -14,6 +24,7 @@
         <input type="file" class="profileImageUploadSpotWord" accept="image/gif, image/jpeg, img/png" id="file2" onchange="loadProfilePic(event)" />
         <p><img id="profile-image" /></p>
     </div>
+
 </div>
 
        
@@ -41,31 +52,27 @@
             <h3 id="Description"></h3>
         </div>
          <div class="gallery">
-            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadCommissionPic4(event)"/>
-            <p><label for="file6" class="ImageUploadSpot1">Upload Commission Image</label></p>
-            <p><img id="commission-image4" width="800" height="600"/></p>
-            <div class="desc">Title</div>
+               <h3 id="CommissionName">Commission Name </h3>
+            <h4 id="currency"><span>Commission Currency </span>Commission Price</h4>
+            <p><img id="commission-image" width="800" height="600"/></p>
+            <h3 id="ArtistName">Artist: </h3>
+            <h3 id="Description"></h3>
         </div>
+        
       </div>
 
       
 </div>
   <div>
       <script>
-        var loadBannerPic = function(event) {
-        var image = document.getElementById('banner-image');
-        image.src = URL.createObjectURL(event.target.files[0])
-        };
+   
 
         var loadProfilePic = function(event) {
         var image = document.getElementById('profile-image');
         image.src = URL.createObjectURL(event.target.files[0])
         };
 
-            var loadCommissionPic4 = function(event) {
-        var image = document.getElementById('commission-image4');
-        image.src = URL.createObjectURL(event.target.files[0])
-        };
+       
 
 
        </script>
