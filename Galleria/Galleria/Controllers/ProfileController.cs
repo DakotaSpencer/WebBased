@@ -4,18 +4,14 @@
 ﻿using Galleria.Data;
 using Galleria.Interfaces;
 using Galleria.Models;
->>>>>>> fe907467e320ee454cd691090457d7fe52299370
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Galleria.Controllers
 {
     public class ProfileController : Controller
     {
-<<<<<<< HEAD
-     
 
-    
-=======
 
         IDataAccessLayer dal;
 
@@ -40,7 +36,7 @@ namespace Galleria.Controllers
             return View("Index");
         }
 
->>>>>>> fe907467e320ee454cd691090457d7fe52299370
+
         public IActionResult Index()
         {
             return View();
