@@ -23,18 +23,6 @@ namespace Galleria.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult AddUser()
-        {
-            Users user;
-            int id = dal.GetUsers().Count() + 1;
-            user = new Users(id, Request.Form["FirstName"], Request.Form["LastName"], Request.Form["Username"],
-                Request.Form["Email"], Request.Form["Password"], "");
-            dal.AddUser(user);
-
-            return View("Index");
-        }
-
         public IActionResult _PricingInformation()
         {
             return View();

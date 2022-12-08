@@ -2,10 +2,11 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace Galleria.Models
 {
-    public partial class Users
+    public partial class Users : IdentityUser
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
