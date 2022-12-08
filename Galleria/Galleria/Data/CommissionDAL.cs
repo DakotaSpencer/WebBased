@@ -3,34 +3,32 @@ using Galleria.Interfaces;
 
 namespace Galleria.Data
 {
-    public class CommissionDAL
+    public class CommissionDAL : IDataAccessLayer
     {
-        private CommissionContext db;
+        public GalleriaContext db;
 
-        public CommissionDAL(CommissionContext db)
+        public CommissionDAL(GalleriaContext db)
         {
             this.db = db;
         }
 
-        public CommissionModel GetCommission(int? id)
+        public Commissions GetCommission(int? id)
         {
             return db.Commissions.FirstOrDefault(commission => commission.CommissionId == id);
         }
 
-        public IEnumerable<CommissionModel> GetCommissions()
+        public IEnumerable<Commissions> GetCommissions()
         {
-            db.SaveChanges();
-            return db.Commissions;
+            return db.Commissions.ToList();
         }
 
-        public IEnumerable<CommissionModel> Search (string strCommissionSearch)
+        public IEnumerable<Commissions> SearchCommissions (string strCommissionSearch)
         {
-            List<CommissionModel> foundCommissions = new List<CommissionModel>();
+            List<Commissions> foundCommissions = new List<Commissions>();
 
             foreach (var commission in db.Commissions)
             {
-                if (commission.ArtistName.ToUpper().Contains(strCommissionSearch.ToUpper()) ||
-                    commission.CommissionName.ToUpper().Contains(strCommissionSearch.ToUpper()))
+                if (commission.CommissionName.ToUpper().Contains(strCommissionSearch.ToUpper()))
                 {
                     foundCommissions.Add(commission);
                 }
@@ -39,7 +37,7 @@ namespace Galleria.Data
             return foundCommissions;
         }
 
-        public void AddCommission(CommissionModel commission)
+        public void AddCommission(Commissions commission)
         {
             commission.CommissionId = 0;
             db.Add(commission);
@@ -57,9 +55,14 @@ namespace Galleria.Data
 
         // --------- User DAL -------------
 
-        public UserModel GetUser(int? id)
+        public IEnumerable<Users> GetUsers()
         {
-            return db.Users.FirstOrDefault(user => user.UserId == id);
+            return db.Users.ToList();
+        }
+
+        public void GetUser(int? id)
+        {
+            db.Users.FirstOrDefault(user => user.UserId == id);
         }
 
         public void DeleteUser(int? id)
@@ -77,9 +80,15 @@ namespace Galleria.Data
             }
         }
         
-        public void UpdateUser(UserModel user)
+        public void UpdateUser(Users user)
         {
-            db.Update(user);
+            db.Users.Update(user);
+            db.SaveChanges();
+        }
+
+        public void AddUser(Users user)
+        {
+            db.Users.Add(user);
             db.SaveChanges();
         }
     }

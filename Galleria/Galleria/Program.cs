@@ -2,6 +2,7 @@ using Galleria.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Azure.Identity;
+using Galleria.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,15 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Dependency
+builder.Services.AddDbContext<GalleriaContext>(
+    options => options
+        .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddScoped<IDataAccessLayer, CommissionDAL>();
 
 var app = builder.Build();
 
@@ -65,7 +75,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "Settings",
-    pattern: "{ controller = Profile}/{ action = Settings}/{ id ?}");
+    pattern: "{ controller = Account}/{ action = Settings}/{ id ?}");
 
 
 app.MapRazorPages();

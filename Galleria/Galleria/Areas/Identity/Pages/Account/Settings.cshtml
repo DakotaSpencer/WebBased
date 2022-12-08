@@ -1,15 +1,24 @@
 ﻿@page
 @model Galleria.Areas.Identity.Pages.Account.SettingsModel
 @{
-    
+    ViewData["Title"] = "Account Settings";
 }
 
- <a class="Edit-CommissionPage"  style="position:relative; left:-10px; top:-10px;" href="../Profile/EditCommission">Edit Commissions</a> <a id="Create-CommissoinsPage" style="position:relative; left:40px; top:-10px;"href="../Profile/CreateCommission">Create Commissions</a><a class="Edit-CommissionPage"  style="position:relative; left:110px; top:-10px;" href="../Profile/Settings">"Settings</a>
+ <a class="Edit-CommissionPage"  style="position:relative; left:-10px; top:-10px;" href="../Profile/EditCommission">Edit Commissions</a> <a id="Create-CommissoinsPage" style="position:relative; left:40px; top:-10px;"href="../Profile/CreateCommissions">Create Commissions</a>
 
 <div class="authform">
     <form id="updateForm" asp-route-returnUrl="" method="post">
+        <div class="form-floating">
+            <input type="file" accept="image/gif, image/jpeg, img/png" id="file6" onchange="loadProfilePic(event)" />
+            <p><label for="file6" class="ImageUploadSpot1">Upload Profile Image</label></p>
+            <p><img id="profile-image" width="600" height="600" /></p>
+        </div>
 
-        
+        <div class="form-floating">
+            <label>Email</label>
+            <input class="form-control" autocomplete="email" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
         <div class="form-floating">
             <label>Username</label>
             <input class="form-control" autocomplete="username" aria-required="true" />
@@ -20,7 +29,16 @@
             <input class="form-control" autocomplete="url" aria-required="true" />
             <span class="text-danger"></span>
         </div>
-        
+        <div class="form-floating">
+            <label>UpdatePassword</label>
+            <input class="form-control" autocomplete="new-password" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-floating">
+            <label>Confirm New Password</label>
+            <input class="form-control" autocomplete="new-password" aria-required="true" />
+            <span class="text-danger"></span>
+        </div>
         <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
     </form>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>

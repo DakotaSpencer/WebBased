@@ -23,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="NewFolder\" />
+    <Folder Include="Pages\Commission\" />
   </ItemGroup>
 
 </Project>

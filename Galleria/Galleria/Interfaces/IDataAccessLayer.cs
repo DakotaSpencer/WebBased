@@ -4,20 +4,22 @@ namespace Galleria.Interfaces
 {
     public interface IDataAccessLayer
     {
-        public IEnumerable<CommissionModel> GetCommissions();
+        public IEnumerable<Commissions> GetCommissions();
 
-        public IEnumerable<CommissionModel> SearchCommissions(string strSearchCommission);
+        public IEnumerable<Commissions> SearchCommissions(string strSearchCommission);
 
-        void AddCommission(CommissionModel commission);
+        void AddCommission(Commissions commission);
 
         void DeleteCommission(int? id);
 
-        void GetCommission(int? id);
+        Commissions GetCommission(int? id);
 
-        void AddUser(UserModel user);
+        void AddUser(Users user);
 
         void DeleteUser(int? id);
 
         void GetUser(int? id);
+
+        public IEnumerable<Users> GetUsers();
     }
 }

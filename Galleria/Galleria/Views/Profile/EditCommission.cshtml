@@ -1,7 +1,8 @@
 ﻿ @page
-@model Galleria.Models.CommissionModel
+@model Galleria.Models.Commissions
 @{/* Should take in information from the database and populate the fields for each commission */
 }
+<<<<<<< HEAD
 <div class="text-center">
         <form  method= "post">
             <div  class="commissionHeader">
@@ -9,6 +10,15 @@
                     <label for="desc">Commission Name</label>
                     <input type="text"  placeholder="Commission Name"/>
                     <span>
+=======
+<div class="commissionContainer">
+    <div class="commissionWrapper">
+        <form>
+            <div class="commissionHeader">
+                <label for="desc">Commission Name</label>
+                <input type="text" placeholder="Commission Name"/>
+                <span>
+>>>>>>> fe907467e320ee454cd691090457d7fe52299370
                     <label for="currency">Choose a currency:</label>
 
                     <select name="currency" id="currency">
@@ -17,6 +27,7 @@
                       <option value="yen">Yen</option>
                       <option value="pound">Pound</option>
                     </select>
+<<<<<<< HEAD
                      </span>
                      <label for="desc">Commission Price</label>
                     <input type="number" placeholder="Commission Price" />
@@ -36,6 +47,24 @@
                         <img alt="" src="{commissionIMGPreview}"/>@{/* Image should take in whatever is uploaded */}
                         <button action="uploadImages" id="UploadedImages">Upload Image(s)</button>
                     </div>
+=======
+                </span>
+                <label for="desc">Commission Price</label>
+                <input type="number" placeholder="Commission Price" />
+            </div>
+            <div>
+                <label for="desc">Commission Images</label>
+                <img alt="" src="{commissionIMGPreview}"/>@{/* Image should take in whatever is uploaded */}
+                <button action="uploadImages">Upload Image(s)</button>
+                <div>
+                    {Artist Name} @{/* Artist name is taken from current profile that is logged in, and should not be able to change*/}
+                </div>
+                <div>
+                    <label for="desc">Commission Description</label>
+                    <input type="text" placeholder="Commission Description" />
+                </div>
+            </div>
+>>>>>>> fe907467e320ee454cd691090457d7fe52299370
         </form>
                 
 

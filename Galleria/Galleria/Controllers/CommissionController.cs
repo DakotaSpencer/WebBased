@@ -1,4 +1,7 @@
-﻿using Galleria.Interfaces;
+﻿using Galleria.Data;
+using Galleria.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -8,14 +11,25 @@ namespace Galleria.Controllers
     {
         IDataAccessLayer dal;
 
-        public CommissionController(IDataAccessLayer dal)
+        public CommissionController(IDataAccessLayer dal, GalleriaContext db)
         {
             this.dal = dal;
+
+            if (dal.GetType() == typeof(CommissionDAL))
+            {
+                ((CommissionDAL)dal).db = db;
+            }
         }
 
-        public IActionResult PersonalCommissionGallery()
+
+        public IActionResult CommissionGallery()
         {
-            return View();
+            return View("CommissionGallery",dal.GetCommissions());
+        }
+
+        public IActionResult SearchCommissions()
+        {
+            return View("CommissionGallery", dal.SearchCommissions(Request.Form["txtSearch"]));
         }
     }
 }
