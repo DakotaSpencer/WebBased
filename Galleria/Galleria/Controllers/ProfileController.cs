@@ -33,6 +33,12 @@ namespace Galleria.Controllers
             return View();
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
         public IActionResult _AboutMePartial()
         {
             return View();
